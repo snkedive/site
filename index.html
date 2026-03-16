@@ -227,6 +227,10 @@
         z-index: -1;
       }
 
+      html {
+        font-size: clamp(14px, 1.1vw, 22px);
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -310,7 +314,7 @@
         color: #f0f3f3;
         /* navbar text color */
         font-weight: 800;
-        font-size: x-large;
+        font-size: 1.5rem;
         text-decoration: none;
         /* this removes the underline */
       }
@@ -324,6 +328,7 @@
       #flex {
         display: flex;
         flex: 1;
+        min-height: 0;
       }
 
       /* this colors BOTH sidebars
@@ -391,14 +396,15 @@
       h2,
       h3 {
         color: #f5c2c0;
-        font-size: 18.72px;
+        font-size: 1.17rem;
         font-weight: normal;
       }
 
       h1 {
         color: #f2ed93;
-        font-size: 25px;
+        font-size: 1.5625rem;
         font-weight: normal;
+        margin-top: 0;
       }
 
       strong {
