@@ -38,10 +38,16 @@ function parseItems(xml) {
   let m;
   while ((m = re.exec(xml)) !== null) {
     const raw = m[1];
+    const contentEncoded = (() => {
+      const m = raw.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/);
+      if (!m) return "";
+      return m[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
+    })();
     items.push({
       title: getTag(raw, "title"),
       link: getTag(raw, "link"),
       description: getTag(raw, "description"),
+      contentEncoded,
       pubDate: getTag(raw, "pubDate"),
       guid: getTag(raw, "guid"),
     });
@@ -63,10 +69,11 @@ function formatDate(dateStr) {
 
 function generatePostPage(item, template) {
   const date = formatDate(item.pubDate);
+  const body = item.contentEncoded || item.description;
   const content = [
     `          <h1>${item.title}</h1>`,
     `          <p class="post-date">${date}</p>`,
-    `          <div class="post-content">${item.description}</div>`,
+    `          <div class="post-content">${body}</div>`,
     `          <p><a href="/blog/">&larr; back to blog</a></p>`,
   ].join("\n");
 
