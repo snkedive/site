@@ -67,8 +67,8 @@
               target="_blank"
               >check out their music, it's really good!</a
             >). some of my hobbies as of late include traveling, working through
-            my games backlog, writing, meowing, spinning in circles, raving, and
-            hanging out with my friends.
+            my games backlog, writing, spinning in circles, raving, and hanging
+            out with my friends.
           </p>
           <p>
             i created this site as a way to coalesce the various different parts
@@ -567,6 +567,23 @@
       }
     </style>
     <script>
+      const favicon = document.getElementById("favicon");
+      const images = Array.from(
+        { length: 17 },
+        (_, i) => `/images/favicon/${String(i + 1).padStart(2, "0")}.png`,
+      );
+
+      function initWorker() {
+        const worker = new Worker("/js/favicon_worker.js");
+        worker.postMessage({ type: "init", images: images });
+
+        worker.onmessage = function (e) {
+          if (e.data.type === "updateFavicon") {
+            favicon.href = e.data.dataUrl;
+          }
+        };
+      }
+
       function initMarquee() {
         const bar = document.getElementById("topBar");
         const p = bar.querySelector("p");
@@ -586,10 +603,13 @@
           },
         );
       }
+
       document.fonts.ready.then(() => {
         initMarquee();
         window.addEventListener("resize", initMarquee);
       });
+
+      initWorker();
     </script>
   </body>
 </html>
