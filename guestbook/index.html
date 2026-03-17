@@ -38,7 +38,18 @@
 
       <div id="flex">
         <main>
-          <h1>cool stuff</h1>
+          <div style="overflow: hidden; height: 100%">
+            <iframe
+              src="https://snkedive.atabook.org/"
+              style="
+                width: 100%;
+                height: calc(100% + 60px);
+                border: none;
+                display: block;
+                margin-top: -60px;
+              "
+            ></iframe>
+          </div>
         </main>
         <aside id="rightSidebar">
           <h2>my status</h2>
@@ -110,7 +121,7 @@
     <style>
       :root {
         --header-image: url("/media/banner.png");
-        --content: #6ca1e1;
+        --content: #997127;
       }
 
       @font-face {
@@ -213,7 +224,7 @@
       }
 
       aside {
-        background-color: #5485dc;
+        background-color: #87561e;
         width: 200px;
         padding: 20px;
         font-size: smaller;
@@ -222,7 +233,7 @@
       }
 
       main {
-        background-color: #6ca1e1;
+        background-color: #997127;
         flex: 1;
         padding: 20px;
         order: 2;
@@ -260,7 +271,7 @@
       h1,
       h2,
       h3 {
-        color: #ddf6fe;
+        color: #edcd4a;
         font-size: 1.17rem;
         font-weight: normal;
       }
@@ -273,7 +284,7 @@
       }
 
       strong {
-        color: #ddf6fe;
+        color: #edcd4a;
       }
 
       /* pixel border (RCT2-style bevel) */
@@ -294,14 +305,14 @@
 
       main {
         box-shadow:
-          0 0 0 0px #2e5490,
+          0 0 0 0px #4a380e,
           inset 3px 3px 0 rgba(255, 255, 255, 0.4),
           inset -3px -3px 0 rgba(0, 0, 0, 0.6);
       }
 
       aside {
         box-shadow:
-          0 0 0 0px #1e3470,
+          0 0 0 0px #3d2a0a,
           inset 3px 3px 0 rgba(255, 255, 255, 0.4),
           inset -3px -3px 0 rgba(0, 0, 0, 0.6);
       }
@@ -370,6 +381,7 @@
 
         main {
           overflow-y: visible;
+          min-height: 70vh;
         }
 
         #flex {
