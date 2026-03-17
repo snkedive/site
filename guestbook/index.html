@@ -455,7 +455,7 @@
         const p = bar.querySelector("p");
         const barWidth = bar.offsetWidth;
         const textWidth = p.scrollWidth;
-        const speed = 80;
+        const speed = 80; // pixels per second
         p.getAnimations().forEach((a) => a.cancel());
         p.animate(
           [
