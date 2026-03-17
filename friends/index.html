@@ -6,14 +6,14 @@
     <title>snkedive's world ^w^</title>
     <link
       rel="shortcut icon"
-      href="/images/favicon/01.png"
+      href="/media/favicon/01.png"
       type="image/png"
       id="favicon"
     />
   </head>
   <body>
     <video id="bgVideo" autoplay loop muted playsinline>
-      <source src="/images/background.mp4" type="video/mp4" />
+      <source src="/media/background.mp4" type="video/mp4" />
     </video>
     <div id="container">
       <div id="topBar">
@@ -80,11 +80,21 @@
           <img src="https://cyber.dabamos.de/88x31/banner2.gif" />
           <img src="https://mariex3.nekoweb.org/media/toebeans.gif" />
           <img src="https://lattice9.net/buttons/1108.gif" />
-          <img src="https://yesterhost.neocities.org/archive/buttons/button261.gif" />
-          <img src="https://yesterhost.neocities.org/archive/buttons/button377.gif" />
-          <img src="https://yesterhost.neocities.org/archive/buttons/button253.gif" />
-          <img src="https://yesterhost.neocities.org/archive/buttons/button437.gif" />
-          <img src="https://yesterhost.neocities.org/archive/buttons/button467.gif" />
+          <img
+            src="https://yesterhost.neocities.org/archive/buttons/button261.gif"
+          />
+          <img
+            src="https://yesterhost.neocities.org/archive/buttons/button377.gif"
+          />
+          <img
+            src="https://yesterhost.neocities.org/archive/buttons/button253.gif"
+          />
+          <img
+            src="https://yesterhost.neocities.org/archive/buttons/button437.gif"
+          />
+          <img
+            src="https://yesterhost.neocities.org/archive/buttons/button467.gif"
+          />
           <img src="https://cyber.dabamos.de/88x31/gaywebring.gif" />
           <img src="https://cyber.dabamos.de/88x31/julesneohome.gif" />
           <img src="https://cyber.dabamos.de/88x31/ng_tank.gif" />
@@ -104,7 +114,7 @@
     <!-- THIS IS THE CSS !-->
     <style>
       :root {
-        --header-image: url("/images/banner.png");
+        --header-image: url("/media/banner.png");
         --content: #997127;
       }
 
@@ -408,7 +418,7 @@
       const favicon = document.getElementById("favicon");
       const images = Array.from(
         { length: 17 },
-        (_, i) => `/images/favicon/${String(i + 1).padStart(2, "0")}.png`,
+        (_, i) => `/media/favicon/${String(i + 1).padStart(2, "0")}.png`,
       );
 
       function initWorker() {

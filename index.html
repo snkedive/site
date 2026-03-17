@@ -6,14 +6,14 @@
     <title>snkedive's world ^w^</title>
     <link
       rel="shortcut icon"
-      href="/images/favicon/01.png"
+      href="/media/favicon/01.png"
       type="image/png"
       id="favicon"
     />
   </head>
   <body>
     <video id="bgVideo" autoplay loop muted playsinline>
-      <source src="/images/background.mp4" type="video/mp4" />
+      <source src="/media/background.mp4" type="video/mp4" />
     </video>
     <div id="container">
       <div id="topBar">
@@ -193,7 +193,7 @@
     the images as variables */
 
       :root {
-        --header-image: url("/images/banner.png");
+        --header-image: url("/media/banner.png");
 
         /* colors */
         --content: #0f0f24;
@@ -571,7 +571,7 @@
       const favicon = document.getElementById("favicon");
       const images = Array.from(
         { length: 17 },
-        (_, i) => `/images/favicon/${String(i + 1).padStart(2, "0")}.png`,
+        (_, i) => `/media/favicon/${String(i + 1).padStart(2, "0")}.png`,
       );
 
       function initWorker() {
