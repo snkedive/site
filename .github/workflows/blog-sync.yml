@@ -20,10 +20,13 @@ jobs:
       - name: Generate blog posts
         run: node scripts/generate-blog.js
 
+      - name: Sync sidebar to all pages
+        run: node scripts/sync-sidebar.js
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blog/
-          git diff --cached --quiet || git commit -m "sync blog posts from leaflet.pub"
+          git add blog/ friends/ cool-stuff/ guestbook/ not_found.html
+          git diff --cached --quiet || git commit -m "sync blog posts and sidebar"
           git push
