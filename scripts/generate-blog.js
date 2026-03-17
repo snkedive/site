@@ -115,12 +115,18 @@ async function main() {
   const items = parseItems(xml);
   console.log(`Found ${items.length} post(s).`);
 
-  if (items.length === 0) {
-    console.log("Nothing to generate.");
-    return;
-  }
-
   const template = fs.readFileSync(path.join(BLOG_DIR, "index.html"), "utf8");
+
+  const activeSlugs = new Set(items.map((item) => slugFromTitle(item.title)));
+
+  // Remove directories for posts no longer in the feed
+  for (const entry of fs.readdirSync(BLOG_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (!activeSlugs.has(entry.name)) {
+      fs.rmSync(path.join(BLOG_DIR, entry.name), { recursive: true, force: true });
+      console.log(`  removed blog/${entry.name}/`);
+    }
+  }
 
   // Generate individual post pages
   for (const item of items) {
