@@ -38,18 +38,23 @@
 
       <div id="flex">
         <main>
-          <div style="overflow: hidden; height: 100%">
-            <iframe
-              src="https://snkedive.atabook.org/"
-              style="
-                width: 100%;
-                height: calc(100% + 60px);
-                border: none;
-                display: block;
-                margin-top: -60px;
-              "
-            ></iframe>
+          <h1>test post</h1>
+          <p class="post-date">
+            March 17, 2026 |
+            <a href="https://snkedive.leaflet.pub/3mhbfoisqzk2d"
+              >Read on Leaflet!</a
+            >
+          </p>
+          <div class="post-content">
+            <div class="postContent footnote-scope flex flex-col">
+              <p style="font-size: 1em">
+                <span class="                                                 "
+                  >this is a test of my post generation workflow!</span
+                >
+              </p>
+            </div>
           </div>
+          <p><a href="/blog/">&larr; back to blog</a></p>
         </main>
         <aside id="rightSidebar">
           <h2>my status</h2>
@@ -131,7 +136,7 @@
     <style>
       :root {
         --header-image: url("/media/banner.png");
-        --content: #997127;
+        --content: #709a7a;
       }
 
       @font-face {
@@ -158,7 +163,6 @@
 
       html {
         font-size: clamp(14px, 1.1vw, 22px);
-        line-height: 1.2;
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
       }
@@ -174,12 +178,6 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
-      }
-
-      #container::-webkit-scrollbar {
-        display: none; /* Older Safari and Chromium */
       }
 
       #container a {
@@ -241,7 +239,7 @@
       }
 
       aside {
-        background-color: #87561e;
+        background-color: #5c8662;
         width: 200px;
         padding: 20px;
         font-size: smaller;
@@ -250,11 +248,19 @@
       }
 
       main {
-        background-color: #997127;
+        background-color: #709a7a;
         flex: 1;
         padding: 20px;
         order: 2;
         overflow-y: auto;
+      }
+
+      main h1 {
+        margin: 0;
+      }
+
+      main p {
+        margin-top: 0;
       }
 
       #rightSidebar {
@@ -288,7 +294,7 @@
       h1,
       h2,
       h3 {
-        color: #edcd4a;
+        color: #d6f2e0;
         font-size: 1.17rem;
         font-weight: normal;
       }
@@ -301,7 +307,7 @@
       }
 
       strong {
-        color: #edcd4a;
+        color: #d6f2e0;
       }
 
       /* pixel border (RCT2-style bevel) */
@@ -322,14 +328,14 @@
 
       main {
         box-shadow:
-          0 0 0 0px #4a380e,
+          0 0 0 0px #385a42,
           inset 3px 3px 0 rgba(255, 255, 255, 0.4),
           inset -3px -3px 0 rgba(0, 0, 0, 0.6);
       }
 
       aside {
         box-shadow:
-          0 0 0 0px #3d2a0a,
+          0 0 0 0px #2a4230,
           inset 3px 3px 0 rgba(255, 255, 255, 0.4),
           inset -3px -3px 0 rgba(0, 0, 0, 0.6);
       }
@@ -398,7 +404,6 @@
 
         main {
           overflow-y: visible;
-          min-height: 70vh;
         }
 
         #flex {
