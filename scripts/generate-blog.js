@@ -15,7 +15,11 @@ function fetch(url) {
   return new Promise((resolve, reject) => {
     https
       .get(url, (res) => {
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        if (
+          res.statusCode >= 300 &&
+          res.statusCode < 400 &&
+          res.headers.location
+        ) {
           return fetch(res.headers.location).then(resolve).catch(reject);
         }
         let data = "";
@@ -39,7 +43,9 @@ function parseItems(xml) {
   while ((m = re.exec(xml)) !== null) {
     const raw = m[1];
     const contentEncoded = (() => {
-      const m = raw.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/);
+      const m = raw.match(
+        /<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/,
+      );
       if (!m) return "";
       return m[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
     })();
@@ -76,14 +82,14 @@ function generatePostPage(item, template) {
   const body = item.contentEncoded || item.description;
   const content = [
     `          <h1>${item.title}</h1>`,
-    `          <p class="post-date">${date} | <a href="${item.link}">Read on Leaflet</a></p>`,
+    `          <p class="post-date">${date} | <a href="${item.link}">Read on Leaflet!</a></p>`,
     `          <div class="post-content">${body}</div>`,
     `          <p><a href="/blog/">&larr; back to blog</a></p>`,
   ].join("\n");
 
   return template.replace(
     /(<main[^>]*>)[\s\S]*?(<\/main>)/,
-    `$1\n${content}\n        $2`
+    `$1\n${content}\n        $2`,
   );
 }
 
@@ -96,7 +102,7 @@ function generateListing(items) {
       const slug = slugFromTitle(item.title);
       const date = formatDate(item.pubDate);
       return [
-        `          <h2><a href="/blog/${slug}/">${item.title}</a></h2>`,
+        `          <h1><a href="/blog/${slug}/">${item.title}</a></h1>`,
         `          <p class="post-date">${date} | ${item.description}</p>`,
       ].join("\n");
     })
@@ -130,7 +136,7 @@ async function main() {
   const listing = generateListing(items);
   const updated = template.replace(
     /(<!-- POSTS_START -->)[\s\S]*?(<!-- POSTS_END -->)/,
-    `$1\n${listing}\n          $2`
+    `$1\n${listing}\n          $2`,
   );
   fs.writeFileSync(path.join(BLOG_DIR, "index.html"), updated, "utf8");
   console.log("Updated blog/index.html");

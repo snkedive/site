@@ -1,4 +1,4 @@
-name: Sync blog from leaflet.pub
+name: Sync blog posts and layout
 
 on:
   schedule:
@@ -21,12 +21,12 @@ jobs:
         run: node scripts/generate-blog.js
 
       - name: Sync sidebar to all pages
-        run: node scripts/sync-sidebar.js
+        run: node scripts/sync-layout.js
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blog/ friends/ cool-stuff/ guestbook/ not_found.html
-          git diff --cached --quiet || git commit -m "sync blog posts and sidebar"
+          git diff --cached --quiet || git commit -m "synced blog posts and layout"
           git push
