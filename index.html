@@ -260,6 +260,12 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+      }
+
+      #container::-webkit-scrollbar {
+        display: none; /* Older Safari and Chromium */
       }
 
       /* the area below is for all links on your page
@@ -378,7 +384,6 @@
         width: 100%;
         flex-shrink: 0;
         padding: 6px;
-        overflow-y: hidden;
       }
 
       .footer-scroll {
