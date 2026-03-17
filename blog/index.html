@@ -167,12 +167,6 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
-      }
-
-      #container::-webkit-scrollbar {
-        display: none; /* Older Safari and Chromium */
       }
 
       #container a {
@@ -240,6 +234,12 @@
         font-size: smaller;
         display: flex;
         flex-direction: column;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+      }
+
+      aside::-webkit-scrollbar {
+        display: none; /* Older Safari and Chromium */
       }
 
       main {
@@ -248,6 +248,12 @@
         padding: 20px;
         order: 2;
         overflow-y: auto;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+      }
+
+      main::-webkit-scrollbar {
+        display: none; /* Older Safari and Chromium */
       }
 
       main h1 {
@@ -277,6 +283,12 @@
         gap: 2px;
         overflow-x: auto;
         height: 31px;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+      }
+
+      .footer-scroll::-webkit-scrollbar {
+        display: none; /* Older Safari and Chromium */
       }
 
       footer img {
