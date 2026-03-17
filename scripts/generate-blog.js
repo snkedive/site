@@ -55,8 +55,12 @@ function parseItems(xml) {
   return items;
 }
 
-function slugFromLink(link) {
-  return link.replace(/\/$/, "").split("/").pop();
+function slugFromTitle(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
 }
 
 function formatDate(dateStr) {
@@ -72,7 +76,7 @@ function generatePostPage(item, template) {
   const body = item.contentEncoded || item.description;
   const content = [
     `          <h1>${item.title}</h1>`,
-    `          <p class="post-date">${date}</p>`,
+    `          <p class="post-date">${date} | <a href="${item.link}">Read on Leaflet</a></p>`,
     `          <div class="post-content">${body}</div>`,
     `          <p><a href="/blog/">&larr; back to blog</a></p>`,
   ].join("\n");
@@ -89,11 +93,11 @@ function generateListing(items) {
     .slice()
     .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
     .map((item) => {
-      const slug = slugFromLink(item.link);
+      const slug = slugFromTitle(item.title);
       const date = formatDate(item.pubDate);
       return [
         `          <h2><a href="/blog/${slug}/">${item.title}</a></h2>`,
-        `          <p class="post-date">${date}</p>`,
+        `          <p class="post-date">${date} | ${item.description}</p>`,
       ].join("\n");
     })
     .join("\n");
@@ -114,7 +118,7 @@ async function main() {
 
   // Generate individual post pages
   for (const item of items) {
-    const slug = slugFromLink(item.link);
+    const slug = slugFromTitle(item.title);
     const dir = path.join(BLOG_DIR, slug);
     fs.mkdirSync(dir, { recursive: true });
     const html = generatePostPage(item, template);
