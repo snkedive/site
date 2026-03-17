@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>snkedive's world ^w^</title>
+    <link
+      rel="shortcut icon"
+      href="/images/favicon/01.png"
+      type="image/png"
+      id="favicon"
+    />
+  </head>
+  <body>
+    <video id="bgVideo" autoplay loop muted playsinline>
+      <source src="/images/background.mp4" type="video/mp4" />
+    </video>
+    <div id="container">
+      <div id="topBar">
+        <p>
+          MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW
+          MEOW MEOW MEOW MEOW MEOW
+        </p>
+      </div>
+      <div id="headerArea">
+        <div id="header"></div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/blog/">blog</a></li>
+            <li><a href="/cool-stuff/">cool stuff</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">guestbook</a></li>
+            <li><a href="/friends/">friends</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="flex">
+        <main>
+          <h1>blog</h1>
+        </main>
+        <aside id="rightSidebar">
+          <h2>my status</h2>
+          <p>surviving post-gdc depression, working on lp1 + other projects</p>
+          <h2>currently listening to</h2>
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b2734ab3a3e816c3abe2a1fb8973"
+            alt="slayr - Half Blood"
+            style="width: 100%"
+          />
+          <h2>my links</h2>
+          <ul>
+            <li>
+              <a href="https://bsky.app/profile/snkedive.lol" target="_blank"
+                >bluesky</a
+              >
+            </li>
+            <li>
+              <a href="https://www.x.com/snkedive/" target="_blank">twitter</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/snkedive/" target="_blank"
+                >instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@snkedive" target="_blank"
+                >tiktok</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <footer id="footer">
+        <div class="footer-scroll">
+          <img src="https://lattice9.net/buttons/button54.gif" />
+          <img src="https://lattice9.net/buttons/button12.gif" />
+          <img src="https://lattice9.net/buttons/1079.gif" />
+          <img src="https://cyber.dabamos.de/88x31/banner2.gif" />
+          <img src="https://mariex3.nekoweb.org/media/toebeans.gif" />
+          <img src="https://lattice9.net/buttons/1108.gif" />
+          <img src="https://yesterhost.neocities.org/archive/buttons/button261.gif" />
+          <img src="https://yesterhost.neocities.org/archive/buttons/button377.gif" />
+          <img src="https://yesterhost.neocities.org/archive/buttons/button253.gif" />
+          <img src="https://yesterhost.neocities.org/archive/buttons/button437.gif" />
+          <img src="https://yesterhost.neocities.org/archive/buttons/button467.gif" />
+          <img src="https://cyber.dabamos.de/88x31/gaywebring.gif" />
+          <img src="https://cyber.dabamos.de/88x31/julesneohome.gif" />
+          <img src="https://cyber.dabamos.de/88x31/ng_tank.gif" />
+          <img src="https://cyber.dabamos.de/88x31/paws.gif" />
+          <img src="https://cyber.dabamos.de/88x31/ralseismokingadart.gif" />
+          <img src="https://cyber.dabamos.de/88x31/ravenow3.gif" />
+          <img src="https://cyber.dabamos.de/88x31/rct2.gif" />
+          <img src="https://cyber.dabamos.de/88x31/transnow2.gif" />
+          <img src="https://cyber.dabamos.de/88x31/vscbutton.gif" />
+          <img src="https://cyber.dabamos.de/88x31/midi_files_now.gif" />
+          <img src="https://cyber.dabamos.de/88x31/mousepow.gif" />
+          <img src="https://cyber.dabamos.de/88x31/miku.gif" />
+          <img src="https://cyber.dabamos.de/88x31/linux_powered.gif" />
+        </div>
+      </footer>
+    </div>
+    <!-- THIS IS THE CSS !-->
+    <style>
+      :root {
+        --header-image: url("/images/banner.png");
+        --content: #9ab677;
+      }
+
+      @font-face {
+        font-family: "RCT2";
+        src: url("/fonts/rct2.otf") format("opentype");
+      }
+
+      body {
+        font-family: "RCT2", monospace;
+        margin: 0;
+        background-color: #080810;
+        color: #f0f3f3;
+      }
+
+      #bgVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      html {
+        font-size: clamp(14px, 1.1vw, 22px);
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      #container {
+        max-width: 900px;
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-left: 2px solid #111;
+        border-right: 2px solid #111;
+      }
+
+      #container a {
+        color: #f2ed93;
+      }
+
+      #headerArea {
+        flex-shrink: 0;
+      }
+
+      #header {
+        width: 100%;
+        background-color: #334243;
+        height: 150px;
+        background-image: var(--header-image);
+        background-size: 100%;
+        background-position: center 41%;
+        border-left: 3px solid rgba(255, 255, 255, 0.4);
+        border-right: 3px solid rgba(0, 0, 0, 0.6);
+      }
+
+      #navbar {
+        height: 40px;
+        flex-shrink: 0;
+        background-color: #334243;
+        width: 100%;
+      }
+
+      #navbar ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        justify-content: space-evenly;
+        height: 100%;
+        align-items: center;
+      }
+
+      #navbar li {
+        padding: 0;
+      }
+
+      #navbar li a {
+        color: #f0f3f3;
+        font-weight: normal;
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+
+      #navbar li a:hover {
+        color: #1a7fff;
+        text-decoration: underline;
+      }
+
+      #flex {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+      }
+
+      aside {
+        background-color: #8c9e66;
+        width: 200px;
+        padding: 20px;
+        font-size: smaller;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        background-color: #9ab677;
+        flex: 1;
+        padding: 20px;
+        order: 2;
+        overflow-y: auto;
+      }
+
+      #rightSidebar {
+        order: 3;
+      }
+
+      footer {
+        background-color: #334243;
+        color: #f0f3f3;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 6px;
+      }
+
+      .footer-scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2px;
+        overflow-x: auto;
+        height: 31px;
+      }
+
+      footer img {
+        width: 88px;
+        height: 31px;
+        flex-shrink: 0;
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #e4f6c4;
+        font-size: 1.17rem;
+        font-weight: normal;
+      }
+
+      h1 {
+        color: #f2ed93;
+        font-size: 1.5625rem;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      strong {
+        color: #e4f6c4;
+      }
+
+      /* pixel border (RCT2-style bevel) */
+      #topBar,
+      #navbar {
+        box-shadow:
+          0 0 0 0px #1a2122,
+          inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+          inset -3px -3px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      footer {
+        box-shadow:
+          0 0 0 0px #1a2122,
+          inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+          inset -3px -3px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      main {
+        box-shadow:
+          0 0 0 0px #4a6230,
+          inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+          inset -3px -3px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      aside {
+        box-shadow:
+          0 0 0 0px #3d5228,
+          inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+          inset -3px -3px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      aside h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      aside h2 ~ h2 {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      aside img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 8px;
+      }
+
+      aside ul {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      aside p {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      #topBar {
+        width: 100%;
+        height: 30px;
+        flex-shrink: 0;
+        font-size: smaller;
+        background-color: #334243;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      #topBar p {
+        flex-shrink: 0;
+        margin: 0;
+        white-space: nowrap;
+        color: #f0f3f3;
+        will-change: transform;
+      }
+
+      @media only screen and (max-width: 800px) {
+        html {
+          font-size: 16px;
+          overflow-x: hidden;
+          line-height: 1.3;
+        }
+
+        #container {
+          height: auto;
+          min-height: 100vh;
+          overflow: visible;
+        }
+
+        main {
+          overflow-y: visible;
+        }
+
+        #flex {
+          flex-wrap: wrap;
+        }
+
+        aside {
+          width: 100%;
+        }
+
+        main {
+          order: 1;
+        }
+
+        #leftSidebar {
+          order: 2;
+        }
+
+        #rightSidebar {
+          order: 3;
+        }
+
+        #navbar {
+          height: auto;
+        }
+
+        #navbar ul {
+          flex-wrap: wrap;
+          height: auto;
+          justify-content: space-evenly;
+          padding: 4px 0;
+        }
+
+        #navbar li {
+          width: 33.33%;
+          text-align: center;
+          padding: 4px 0;
+        }
+      }
+    </style>
+    <script>
+      const favicon = document.getElementById("favicon");
+      const images = Array.from(
+        { length: 17 },
+        (_, i) => `/images/favicon/${String(i + 1).padStart(2, "0")}.png`,
+      );
+
+      function initWorker() {
+        const worker = new Worker("/js/favicon_worker.js");
+        worker.postMessage({ type: "init", images: images });
+
+        worker.onmessage = function (e) {
+          if (e.data.type === "updateFavicon") {
+            favicon.href = e.data.dataUrl;
+          }
+        };
+      }
+
+      function initMarquee() {
+        const bar = document.getElementById("topBar");
+        const p = bar.querySelector("p");
+        const barWidth = bar.offsetWidth;
+        const textWidth = p.scrollWidth;
+        const speed = 80;
+        p.getAnimations().forEach((a) => a.cancel());
+        p.animate(
+          [
+            { transform: `translateX(${barWidth}px)` },
+            { transform: `translateX(${-textWidth}px)` },
+          ],
+          {
+            duration: ((barWidth + textWidth) / speed) * 1000,
+            iterations: Infinity,
+            easing: "linear",
+          },
+        );
+      }
+
+      document.fonts.ready.then(() => {
+        initMarquee();
+        window.addEventListener("resize", initMarquee);
+      });
+
+      initWorker();
+    </script>
+  </body>
+</html>
