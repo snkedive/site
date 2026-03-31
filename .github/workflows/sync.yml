@@ -1,8 +1,7 @@
 name: Sync blog posts and layout
 
 on:
-  schedule:
-    - cron: "0 * * * *" # every hour
+  push:
   workflow_dispatch: # allow manual runs
 
 jobs:
