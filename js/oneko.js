@@ -12,7 +12,7 @@
 
   let nekoPosX = 32;
   let nekoPosY = 32;
-  
+
   let mousePosX = 0;
   let mousePosY = 0;
 
@@ -86,19 +86,21 @@
   };
 
   function init() {
-    let nekoFile = "./oneko.gif"
-    const curScript = document.currentScript
+    let nekoFile = "../media/oneko.gif";
+    const curScript = document.currentScript;
     if (curScript && curScript.dataset.cat) {
-      nekoFile = curScript.dataset.cat
+      nekoFile = curScript.dataset.cat;
     }
     if (curScript && curScript.dataset.persistPosition) {
       if (curScript.dataset.persistPosition === "") {
         persistPosition = true;
       } else {
-        persistPosition = JSON.parse(curScript.dataset.persistPosition.toLowerCase());
+        persistPosition = JSON.parse(
+          curScript.dataset.persistPosition.toLowerCase(),
+        );
       }
     }
-  
+
     if (persistPosition) {
       let storedNeko = JSON.parse(window.localStorage.getItem("oneko"));
       if (storedNeko !== null) {
@@ -113,7 +115,7 @@
         nekoEl.style.backgroundPosition = storedNeko.bgPos;
       }
     }
-  
+
     nekoEl.id = "oneko";
     nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
@@ -126,30 +128,33 @@
     nekoEl.style.zIndex = 2147483647;
 
     nekoEl.style.backgroundImage = `url(${nekoFile})`;
-    
+
     document.body.appendChild(nekoEl);
 
     document.addEventListener("mousemove", function (event) {
       mousePosX = event.clientX;
       mousePosY = event.clientY;
     });
-    
+
     if (persistPosition) {
       window.addEventListener("beforeunload", function (event) {
-        window.localStorage.setItem("oneko", JSON.stringify({
-          nekoPosX: nekoPosX,
-          nekoPosY: nekoPosY,
-          mousePosX: mousePosX,
-          mousePosY: mousePosY,
-          frameCount: frameCount,
-          idleTime: idleTime,
-          idleAnimation: idleAnimation,
-          idleAnimationFrame: idleAnimationFrame,
-          bgPos: nekoEl.style.backgroundPosition
-        }));
+        window.localStorage.setItem(
+          "oneko",
+          JSON.stringify({
+            nekoPosX: nekoPosX,
+            nekoPosY: nekoPosY,
+            mousePosX: mousePosX,
+            mousePosY: mousePosY,
+            frameCount: frameCount,
+            idleTime: idleTime,
+            idleAnimation: idleAnimation,
+            idleAnimationFrame: idleAnimationFrame,
+            bgPos: nekoEl.style.backgroundPosition,
+          }),
+        );
       });
     }
-    
+
     window.requestAnimationFrame(onAnimationFrame);
   }
 
