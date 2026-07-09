@@ -514,7 +514,9 @@
         "another day volunteering at the betsy ross museum. everyone keeps asking me if they can fuck the flag. buddy, they wont even let me fuck it",
         "what you think that we think is cool what you think that we think is cool what you think that we think is cool what you think that we think is cool what you think that we think is cool",
       ];
-      let marqueeIndex = parseInt(sessionStorage.getItem("marqueeIndex") ?? "0", 10) % marqueeMessages.length;
+      let marqueeIndex =
+        parseInt(sessionStorage.getItem("marqueeIndex") ?? "0", 10) %
+        marqueeMessages.length;
 
       function runMarquee() {
         const bar = document.getElementById("topBar");
