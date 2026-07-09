@@ -54,15 +54,15 @@
             >
             and shitposts on
             <a href="https://twitter.com/snkedive" target="_blank">twitter</a>.
-            wherever you come from, welcome! when i'm not working on freelance
-            work and various other creative endeavors, i also help run
+            when i'm not working on freelance work and various other creative
+            endeavors, i also help run
             <a href="https://limitingfactor.net/" target="_blank"
               >limiting factor records</a
             >
             with my friend ellie/kinoteki/burialposter (<a
               href="https://kinoteki.bandcamp.com/"
               target="_blank"
-              >check out their music, it's really good!</a
+              >check out their music, it's really good</a
             >). some of my hobbies as of late include traveling, working through
             my games backlog, writing music, going to shows, and hanging out
             with my friends.
@@ -72,10 +72,10 @@
             of my life into one place. i also wanted to create a space to unplug
             from social media and share my more
             <a href="/blog/">long-form musings</a> with anyone who cares to
-            listen, so if you've read this far, thank you! :3 i would not be
-            where i am today without the support of all of the friends and
-            family i've made over the years in every corner of the internet. i
-            love you all! &#60;3
+            listen, so if you've read this far, thank you. i would not be where
+            i am today without the support of all of the friends and family i've
+            made over the years in every corner of the internet. i luv you all
+            &#60;3
           </p>
           <p>
             feel free to reach me on
@@ -617,7 +617,9 @@
         "another day volunteering at the betsy ross museum. everyone keeps asking me if they can fuck the flag. buddy, they wont even let me fuck it",
         "what you think that we think is cool what you think that we think is cool what you think that we think is cool what you think that we think is cool what you think that we think is cool",
       ];
-      let marqueeIndex = parseInt(sessionStorage.getItem("marqueeIndex") ?? "0", 10) % marqueeMessages.length;
+      let marqueeIndex =
+        parseInt(sessionStorage.getItem("marqueeIndex") ?? "0", 10) %
+        marqueeMessages.length;
 
       function runMarquee() {
         const bar = document.getElementById("topBar");
